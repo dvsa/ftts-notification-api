@@ -1,0 +1,87 @@
+{
+    "name": "ftts-notification-api",
+    "version": "2.0.0",
+    "description": "Notification API for FTTS",
+    "main": "index.js",
+    "scripts": {
+        "build": "rimraf dist && tsc",
+        "lint": "eslint --ext .js,.ts .",
+        "start": "npm run build && func start --verbose",
+        "test": "npm install && npm run lint && jest",
+        "test-ci": "npm run lint && jest --ci --reporters=jest-junit --reporters=jest-standard-reporter",
+        "coverage-ci": "jest --coverage --reporters=jest-standard-reporter",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --verbose --coverage",
+        "lint:report": "eslint --ext .js,.ts . -f json -o lint/report.json"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run test"
+        }
+    },
+    "dependencies": {
+        "@azure/service-bus": "1.1.9",
+        "@dvsa/azure-logger": "3.0.6",
+        "ajv": "6.12.2",
+        "dotenv": "8.2.0",
+        "notifications-node-client": "4.7.3",
+        "reflect-metadata": "0.1.13",
+        "typedi": "0.8.0",
+        "uuid": "7.0.3"
+    },
+    "devDependencies": {
+        "@azure/functions": "1.2.0",
+        "@babel/core": "7.9.0",
+        "@babel/plugin-proposal-class-properties": "7.8.3",
+        "@babel/plugin-proposal-decorators": "7.8.3",
+        "@babel/preset-env": "7.9.5",
+        "@babel/preset-typescript": "7.9.0",
+        "@dvsa/eslint-config-ts": "2.0.0",
+        "@types/faker": "4.1.11",
+        "@types/jest": "25.2.1",
+        "@types/node": "13.13.1",
+        "@types/uuid": "7.0.2",
+        "babel-jest": "25.4.0",
+        "eslint": "6.8.0",
+        "factory.ts": "0.5.1",
+        "faker": "4.1.0",
+        "husky": "4.2.5",
+        "jest": "25.4.0",
+        "jest-junit": "10.0.0",
+        "jest-standard-reporter": "1.0.4",
+        "mock-fs": "4.10.4",
+        "nodemon": "2.0.3",
+        "rimraf": "3.0.1",
+        "ts-jest": "25.5.0",
+        "typescript": "3.7.5"
+    },
+    "jest": {
+        "coverageDirectory": "<rootDir>/coverage",
+        "coverageReporters": [
+            "lcov"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx,js}",
+            "!src/**/*.d.ts"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "testRegex": "./tests/.*.test.ts$",
+        "rootDir": ".",
+        "setupFiles": [
+            "<rootDir>/tests/mocks/setup-jest.ts"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@ssh.dev.azure.com:v3/DvsaDev/ftts-beta/ftts-beta"
+    },
+    "author": "",
+    "license": "ISC",
+    "optionalDependencies": {
+        "fsevents": "2.1.2"
+    }
+}

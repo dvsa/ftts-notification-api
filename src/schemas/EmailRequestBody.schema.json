@@ -1,0 +1,47 @@
+{
+  "$ref": "#/definitions/EmailRequestBody",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "EmailRequestBody": {
+      "additionalProperties": false,
+      "properties": {
+        "context_id": {
+          "type": "string"
+        },
+        "email_address": {
+          "format": "email",
+          "notEmpty": true,
+          "type": "string"
+        },
+        "message_content": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "message_subject": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/definitions/Target"
+        }
+      },
+      "required": [
+        "email_address",
+        "message_content",
+        "message_subject",
+        "target"
+      ],
+      "type": "object"
+    },
+    "Target": {
+      "enum": [
+        "gb",
+        "ni"
+      ],
+      "type": "string"
+    }
+  }
+}

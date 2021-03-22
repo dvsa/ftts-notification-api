@@ -1,0 +1,8 @@
+// Override default tsconfig for the linter
+// Specifies all the source files we want to lint
+{
+    "extends": "./tsconfig.json",
+    "include": ["**/*"],
+    "exclude": []
+  }
+  

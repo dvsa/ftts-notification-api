@@ -1,0 +1,68 @@
+{
+  "$ref": "#/definitions/LetterRequestBody",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "LetterRequestBody": {
+      "additionalProperties": false,
+      "properties": {
+        "address_line_1": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "address_line_2": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "address_line_3": {
+          "type": "string"
+        },
+        "address_line_4": {
+          "type": "string"
+        },
+        "address_line_5": {
+          "type": "string"
+        },
+        "address_line_6": {
+          "type": "string"
+        },
+        "context_id": {
+          "type": "string"
+        },
+        "message_content": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "name": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "postcode": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/definitions/Target"
+        }
+      },
+      "required": [
+        "address_line_1",
+        "address_line_2",
+        "message_content",
+        "name",
+        "postcode",
+        "target"
+      ],
+      "type": "object"
+    },
+    "Target": {
+      "enum": [
+        "gb",
+        "ni"
+      ],
+      "type": "string"
+    }
+  }
+}

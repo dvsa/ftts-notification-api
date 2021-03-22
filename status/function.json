@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "name": "statusTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "%STATUS_CRON_TIMER%",
+      "runOnStartup": false,
+      "useMonitor": true
+    }
+  ],
+  "scriptFile": "../dist/status/index.js"
+}
