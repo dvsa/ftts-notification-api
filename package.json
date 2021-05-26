@@ -22,7 +22,7 @@
     "dependencies": {
         "@azure/service-bus": "1.1.9",
         "@dvsa/azure-logger": "3.0.6",
-        "ajv": "6.12.2",
+        "ajv": "6.12.6",
         "dotenv": "8.2.0",
         "notifications-node-client": "4.7.3",
         "reflect-metadata": "0.1.13",
