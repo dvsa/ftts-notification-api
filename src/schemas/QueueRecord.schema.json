@@ -1,0 +1,153 @@
+{
+  "$ref": "#/definitions/QueueRecord",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Email": {
+      "additionalProperties": false,
+      "properties": {
+        "email_address": {
+          "format": "email",
+          "notEmpty": true,
+          "type": "string"
+        },
+        "message_subject": {
+          "notEmpty": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "message_subject",
+        "email_address"
+      ],
+      "type": "object"
+    },
+    "Letter": {
+      "additionalProperties": false,
+      "properties": {
+        "address_line_1": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "address_line_2": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "address_line_3": {
+          "type": "string"
+        },
+        "address_line_4": {
+          "type": "string"
+        },
+        "address_line_5": {
+          "type": "string"
+        },
+        "address_line_6": {
+          "type": "string"
+        },
+        "name": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "postcode": {
+          "notEmpty": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address_line_1",
+        "address_line_2",
+        "postcode"
+      ],
+      "type": "object"
+    },
+    "MessageType": {
+      "enum": [
+        "email",
+        "letter"
+      ],
+      "type": "string"
+    },
+    "QueueRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "context_id": {
+          "type": "string"
+        },
+        "date": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "id": {
+          "type": "string"
+        },
+        "letter": {
+          "$ref": "#/definitions/Letter"
+        },
+        "message_content": {
+          "notEmpty": true,
+          "type": "string"
+        },
+        "message_type": {
+          "$ref": "#/definitions/MessageType"
+        },
+        "no_of_request_retries": {
+          "type": "number"
+        },
+        "no_of_retries": {
+          "type": "number"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "target": {
+          "$ref": "#/definitions/Target"
+        },
+        "trace_id": {
+          "notEmpty": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "message_content",
+        "message_type",
+        "target",
+        "no_of_request_retries",
+        "no_of_retries",
+        "trace_id"
+      ],
+      "type": "object"
+    },
+    "Status": {
+      "enum": [
+        "accepted",
+        "created",
+        "delivered",
+        "failed",
+        "technical-failure",
+        "temporary-failure",
+        "permanent-failure",
+        "received",
+        "sending"
+      ],
+      "type": "string"
+    },
+    "Target": {
+      "enum": [
+        "gb",
+        "ni"
+      ],
+      "type": "string"
+    }
+  }
+}

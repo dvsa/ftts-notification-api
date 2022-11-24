@@ -1,0 +1,105 @@
+{
+  "$ref": "#/definitions/NotificationRequestBody",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "NotificationRequestBody": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "enum": [
+            "email",
+            "letter"
+          ],
+          "type": "string"
+        },
+        "agency": {
+          "enum": [
+            "DVSA",
+            "DVA"
+          ],
+          "type": "string"
+        },
+        "language": {
+          "enum": [
+            "en",
+            "cy"
+          ],
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "standard-booking-confirmation",
+            "standard-booking-cancellation",
+            "standard-booking-rescheduled",
+            "standard-refund-request",
+            "standard-evidence-required",
+            "standard-evidence-not-required",
+            "standard-evidence-may-be-required",
+            "standard-returning-candidate",
+            "standard-candidate-booking-cancellation",
+            "standard-trainer-booker-booking-cancellation"
+          ],
+          "type": "string"
+        },
+        "email_address": {
+          "format": "email",
+          "notEmpty": true,
+          "type": "string"
+        },
+        "postal_address": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "notEmpty": true,
+              "type": "string"
+            },
+            "address_line_1": {
+              "notEmpty": true,
+              "type": "string"
+            },
+            "address_line_2": {
+              "notEmpty": true,
+              "type": "string"
+            },
+            "address_line_3": {
+              "type": "string"
+            },
+            "address_line_4": {
+              "type": "string"
+            },
+            "address_line_5": {
+              "type": "string"
+            },
+            "address_line_6": {
+              "type": "string"
+            },
+            "postcode": {
+              "notEmpty": true,
+              "type": "string"
+            }
+          },
+          "required": [
+            "address_line_1",
+            "address_line_2",
+            "name",
+            "postcode"
+          ],
+          "type": "object"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "context_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "agency",
+        "language",
+        "category"
+      ],
+      "type": "object"
+    }
+  }
+}

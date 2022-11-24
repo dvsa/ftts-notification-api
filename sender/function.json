@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "request",
+      "connection": "SERVICE_BUS_CONNECTION_STRING_NTFAPI",
+      "accessRights": "listen"
+    }
+  ],
+  "scriptFile": "../dist/sender/index.js"
+}

@@ -1,0 +1,42 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureFunctionsJobHost__logging__logLevel__Default": "Trace",
+        "APPINSIGHTS_INSTRUMENTATIONKEY": "mock-key",
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "DISABLE_EGRESS_FILTERING": false,
+        "EGRESS_CUSTOM_ALLOWED_ADDRESSES": "[]",
+        "FUNCTIONS_WORKER_RUNTIME": "node",
+        "FUNCTIONS_EXTENSION_VERSION" : "~4",
+        "GOV_NOTIFY_BASE_URL": "https://api.notifications.service.gov.uk",
+        "GOV_NOTIFY_GB_EMAIL_TEMPLATE": "8c83cbf8-899a-4616-a6fc-f75a0444e38a",
+        "GOV_NOTIFY_GB_KEY": "",
+        "GOV_NOTIFY_GB_LETTER_TEMPLATE": "c95b2993-e1e0-4f6a-8b05-0c01ea8b5b87",
+        "GOV_NOTIFY_NI_EMAIL_TEMPLATE": "7f134b36-a4ad-4e2d-a81d-84eda78a217b",
+        "GOV_NOTIFY_NI_KEY": "",
+        "GOV_NOTIFY_NI_LETTER_TEMPLATE": "4385a212-cbf1-4d87-9874-a1126998ef81",
+        "LOG_LEVEL": "debug",
+        "MAX_NO_OF_REQUEST_RETRIES": "3",
+        "MAX_NO_OF_STATUS_RETRIES": "1",
+        "MAX_WAIT_TIME_IN_SECONDS": "10",
+        "NODE_ENV": "development",
+        "NOTIFY_STUB_URL": "",
+        "QUEUE_CRM_RESULT_NAME": "result",
+        "QUEUE_CRM_STUB_RESULT_NAME": "stub-result",
+        "QUEUE_NOTIFICATION_STATUS_NAME": "status",
+        "QUEUE_NOTIFICATION_REQUEST_NAME": "request",
+        "REQUEST_RETRY_DELAY": "60000",
+        "SERVICE_BUS_CONNECTION_STRING_CRM": "",
+        "SERVICE_BUS_CONNECTION_STRING_NTFAPI": "",
+        "STATUS_CRON_TIMER": "*/30 * * * * *",
+        "STATUS_QUEUE_MESSAGES_LIMIT": "100",
+        "STATUS_RETRY_DELAY": "10000",
+        "USE_CRM_STUB": "true",
+        "USE_NOTIFY_STUB": "true",
+        "WEBSITE_NODE_DEFAULT_VERSION":"~14",
+        "WEBSITE_SITE_NAME": "ftts-notifcation-api"
+    },
+    "Host": {
+        "CORS": "*"
+    }
+}

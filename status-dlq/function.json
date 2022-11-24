@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "name": "queueMessage",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "status/$DeadLetterQueue",
+      "connection": "SERVICE_BUS_CONNECTION_STRING_NTFAPI",
+      "accessRights": "listen"
+    }
+  ],
+  "scriptFile": "../dist/dlq-collector/status.js"
+}
